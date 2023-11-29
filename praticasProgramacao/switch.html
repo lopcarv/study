@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>  
+    <meta charset="UTF-8" />
+    <title>Estruturas de condicoes</title>
+    
+    <script>
+    
+    /* Verificar o aumento de salário de acordo com os seguintes cargos:
+    Estagiario : 100%
+    Analista: 50%
+    Gerente: 30%
+    Presidente: 10%
+    */
+    const salario = prompt('Digite o salário')    
+    const cargo = prompt ('digite um cargo')
+    let aumento = 0
+
+    switch(cargo) {
+        case 'Estagiario': aumento = 2; break;
+        case 'Analista':   aumento = 1.5;  break;
+        case 'Gerente':    aumento = 1.3;  break;
+        case 'Presidente': aumento = 1.1;  break;
+        default: alert('favor escolher um cargo válido !')
+    }
+    // const novoSalario = salario + (salario * aumento)
+    // const novoSalario = salario * (1 * aumento)
+    const novoSalario = salario * aumento
+    
+    console.log("o novo salario é: R$ " + novoSalario)
+    
+    </script>
+</head>
+
+
+
+
+</html>
