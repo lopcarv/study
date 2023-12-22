@@ -33,3 +33,6 @@ function dividir(n1, n2){
     } else
     return Number(n1) / Number(n2)
 }
+
+const somaArrow = (n1, n2) => n1 + n2
+console.log( somaArrow(102, 22))
