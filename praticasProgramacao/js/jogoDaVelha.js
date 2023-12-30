@@ -8,7 +8,17 @@ let coluna
 function iniciar(){
     tabuleiro = []
     board = document.getElementById('board')
+    aviso = document.getElementById('aviso')
+    jogador = 1
+    
+    for(let i = 0; i < 3; i++){
+        tabuleiro[i] = []
+    }
 
+
+
+
+    console.table(tabuleiro)
 }
 
 function exibir(){
