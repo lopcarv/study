@@ -25,6 +25,15 @@ function iniciar(){
 }
 
 function exibir(){
+  let tabela = '<table cellpadding= "10" border = "1">'
+  tabela += '<tr>'
+  tabela += '<td>1</td>'
+  tabela += '<td>2</td>'
+  tabela += '<td>3</td>'
+  tabela += '</tr>'
+  tabela += '</table>'
+
+  board.innerHTML = tabela
   
 }
 
