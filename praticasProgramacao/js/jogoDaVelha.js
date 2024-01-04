@@ -26,22 +26,52 @@ function iniciar(){
 
 function exibir(){
   let tabela = '<table cellpadding= "10" border = "1">'
-  tabela += '<tr>'
-  tabela += '<td>1</td>'
-  tabela += '<td>2</td>'
-  tabela += '<td>3</td>'
-  tabela += '</tr>'
-  tabela += '</table>'
 
-  board.innerHTML = tabela
-  
+    for(let i = 0; i < 3; i++){
+  tabela += '<tr>'
+
+        for(let j = 0; j < 3; j++){
+            
+          switch(tabuleiro[i][j]){
+            case -1: marcador = 'X'; break;
+            case 1: marcador = 'O'; break;
+            default: marcador = '_'
+          }
+       
+    tabela += '<td>' + marcador + '</td>'
+}
+  tabela += '</tr>'
+ 
+}
+tabela += '</table>'
+board.innerHTML = tabela
 }
 
 
 function jogar(){
+    aviso.innerHTML = 'Vez do jogado: ' + numeroJogador()
     
-}
+    linha = document.getElementById('linha').value -1 
+    coluna = document.getElementById('coluna').value -1
+
+  if(tabuleiro[linha][coluna] == 0){
+    tabuleiro[linha][coluna] = numeroJogador() == 1 ? 1 : -1
+
+  } else {
+    aviso.innerHTML = 'Esse campo já foi marcado'
+  }
+
+    console.table(tabuleiro)
+    jogador ++
+    exibir()
+   
+
+}  
 
 function checar(){
     
+}
+
+function numeroJogador(){
+  return jogador%2 + 1
 }
