@@ -64,12 +64,43 @@ function jogar(){
     console.table(tabuleiro)
     jogador ++
     exibir()
+    checar()
    
-
 }  
 
 function checar(){
-    
+  // linhas
+  for(let i = 0; i < 3; i++){
+    let soma = 0
+    soma = tabuleiro[i][0] + tabuleiro[i][1] + tabuleiro[i][2]
+
+    if(soma == 3 || soma == -3){
+      aviso.innerHTML = ' o jogador ' + numeroJogador() + ' ganhou! '
+    }
+  }
+
+ // colunas
+ for(let i = 0; i < 3; i++){
+  let soma = 0
+  soma = tabuleiro[0][i] + tabuleiro[1][i] + tabuleiro[2][i]
+
+  if(soma == 3 || soma == -3){
+    aviso.innerHTML = ' o jogador ' + numeroJogador() + ' ganhou! '
+  }
+}
+
+// Diagonal
+soma = tabuleiro[0][0] + tabuleiro[1][1] + tabuleiro[2][2]
+
+  if(soma == 3 || soma == -3){
+    aviso.innerHTML = ' o jogador ' + numeroJogador() + ' ganhou! '
+  }
+
+
+
+
+  
+
 }
 
 function numeroJogador(){
