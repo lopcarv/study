@@ -7,7 +7,8 @@ function alterarQtd(produto, acao){
         alert('A quantidade não pode ser menos de zero !')
     } else {
         acao == '+' ? qtd.innerHTML++ : qtd.innerHTML--
-        total.innerHTML = qtd.innerHTML * valor.innerHTML
+        const valorTotal = qtd.innerHTML * somenteNumeros(valor.innerHTML)
+        total.innerHTML = formatarValor(valorTotal)
         soma()
 
     }
@@ -19,8 +20,18 @@ function soma(){
     let soma = 0
 
     for(let i =1; i < 4; i++){
-        soma += Number(document.getElementById('total_' + i).innerHTML)
+        let numero = somenteNumeros(document.getElementById('total_' + i).innerHTML)
+        soma += Number(numero)
     }
 
-    document.getElementById('subtotal').innerHTML = soma
+    document.getElementById('subtotal').innerHTML = formatarValor(soma)
 }
+
+function somenteNumeros(n){
+    return n.replace(/\D/g, '')
+}
+
+function formatarValor(n){
+    return 'R$  ' + n.toLocaleString( 'pt-BR')
+}
+
