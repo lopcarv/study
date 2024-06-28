@@ -1,4 +1,4 @@
-'''
+
 # conceitos de lista
 bicycles = ['trek', 'cannodale', 'redline', 'specialized','speed', 'magrelinha']
 print (bicycles[2].title()) # formatando para iniciar maiuscula
@@ -26,7 +26,7 @@ frutas.append('uva')
 frutas.append('maça')
 frutas.append('banana')
 print(frutas)
-'''
+
 # adicionando elementos em uma lista com metodo insert
 cidade = ['natal','belem'] 
 cidade.insert(1, 'rio')
