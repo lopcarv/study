@@ -1,4 +1,6 @@
-# Aula_Exame_Sesc 2024 by: Luis Orlando
+import networkx as nx
+import matplotlib.pyplot as plt
+
 class Grafo:
     def __init__(self):
         self.grafo = {}
@@ -15,6 +17,16 @@ class Grafo:
     def mostrar_grafo(self):
         for vertice in self.grafo:
             print(vertice, ":", self.grafo[vertice])
+
+    def mostrar_grafo_graficamente(self):
+        G = nx.Graph()
+        for vertice in self.grafo:
+            G.add_node(vertice)
+            for vizinho in self.grafo[vertice]:
+                G.add_edge(vertice, vizinho)
+        pos = nx.spring_layout(G)
+        nx.draw(G, pos, with_labels=True, node_size=700, node_color='skyblue', font_size=15, font_color='black', font_weight='bold')
+        plt.show()
 
 def bfs(grafo, vertice_inicial):
     visitados = []
@@ -49,8 +61,11 @@ arestas = [('A', 'B'), ('A', 'C'), ('B', 'D'), ('C', 'D'), ('D', 'E')]
 for aresta in arestas:
     g.adicionar_aresta(*aresta)
 
-# Exibindo o grafo
+# Exibindo o grafo textual
 g.mostrar_grafo()
+
+# Exibindo o grafo graficamente
+g.mostrar_grafo_graficamente()
 
 # Realizando BFS e DFS a partir do vértice 'A'
 print("Busca em Largura (BFS) a partir do vértice 'A':")

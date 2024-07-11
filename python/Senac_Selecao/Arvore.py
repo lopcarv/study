@@ -1,3 +1,5 @@
+# Aula_Exame_Sesc 2024 by: Luis Orlando
+
 class No:
     def __init__(self, valor):
         self.valor = valor
