@@ -4,4 +4,5 @@
 /**
  * 
  */
-package Missao3;
+module Ex67 {
+}
