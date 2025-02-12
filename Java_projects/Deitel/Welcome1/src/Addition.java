@@ -24,6 +24,6 @@ public class Addition
 
         System.out.printf("Sum is %d%n", sum); // exibe a soma
 
-    } // fim do método main
+    } // fim do metodo main
 
 } // fim da classe Addition
